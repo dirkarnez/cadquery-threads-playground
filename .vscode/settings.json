@@ -1,0 +1,23 @@
+{
+    "python.defaultInterpreterPath": "${env:USERPROFILE}/Downloads/python-3.10.8-amd64-portable/python.exe",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": null,
+        "Windows PowerShell": null,
+        "Git Bash": {
+            "args": [
+                "-i"
+            ],
+            "icon": "terminal-bash",
+            "overrideName": true,
+            "path": "${env:USERPROFILE}\\Downloads\\PortableGit\\git-bash.exe",
+            "source": "Git Bash"
+        },
+        "Command Prompt": {
+            "path": ["${env:windir}\\System32\\cmd.exe"],
+            "env": { 
+                "PATH": "${env:USERPROFILE}\\Downloads\\python-3.10.8-amd64-portable;${env:USERPROFILE}\\Downloads\\python-3.10.8-amd64-portable\\Scripts;${env:USERPROFILE}\\Downloads\\PortableGit\\bin"
+            }
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Command Prompt"
+}
