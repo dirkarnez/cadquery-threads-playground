@@ -4,6 +4,7 @@ Installation based on [Installing_CQ-editor.md](https://gist.github.com/medicati
 
 ### Notes
 - May just use VSCode extension (as in [.vscode/extensions.json](.vscode/extensions.json)) for better debugging experience
+    - there are dependency issues
 
 ### Documentation
 - [CadQuery 2 Documentation — CadQuery Documentation](https://cadquery.readthedocs.io/en/latest/)
@@ -32,3 +33,8 @@ Installation based on [Installing_CQ-editor.md](https://gist.github.com/medicati
 - [KiCad / KiCad Libraries / KiCad Packages3D Generator · GitLab](https://gitlab.com/kicad/libraries/kicad-packages3D-generator)
 - [meadiode/cq_gears: CadQuery based involute gear parametric modelling](https://github.com/meadiode/cq_gears)
 - [CadQuery/OCP](https://github.com/CadQuery/OCP)
+- [roipoussiere/cadquery-server: A web server used to render 3d models from CadQuery code loaded dynamically.](https://github.com/roipoussiere/cadquery-server)
+    - [index | CadQuery Server](https://roipoussiere.github.io/cadquery-server/)
+- [bernhard-42/jupyter-cadquery: An extension to render cadquery objects in JupyterLab via pythreejs](https://github.com/bernhard-42/jupyter-cadquery)
+- [bernhard-42/three-cad-viewer: A CAD viewer component based on three.js](https://github.com/bernhard-42/three-cad-viewer)
+    - [CadQuery Viewer](https://bernhard-42.github.io/three-cad-viewer/example.html)
