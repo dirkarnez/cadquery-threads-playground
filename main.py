@@ -27,12 +27,15 @@ license:
 """
 import timeit
 import cadquery as cq
+from cadquery import exporters
 from cq_warehouse.thread import (
     IsoThread,
     AcmeThread,
     MetricTrapezoidalThread,
     PlasticBottleThread,
 )
+
+from cadquery.occ_impl.exporters import *
 
 MM = 1
 IN = 25.4 * MM
@@ -44,19 +47,19 @@ METRIC_TRAPEZOIDAL = 3
 END_FINISHES = 4
 PLASTIC_EXTERNAL = 5
 PLASTIC_INTERNAL = 6
-example = PLASTIC_EXTERNAL
+example = ISO_INTERNAL
 
 
 if example == ISO_INTERNAL:
     """IsoThread Internal Example"""
     starttime = timeit.default_timer()
     iso_internal_thread = IsoThread(
-        major_diameter=6 * MM,
-        pitch=1 * MM,
-        length=4.35 * MM,
+        major_diameter=23.5 * MM,
+        pitch=1.8 * MM,
+        length=5 * MM,
         external=False,
         end_finishes=("square", "chamfer"),
-        hand="left",
+        hand="right",
     )
     elapsed_time = timeit.default_timer() - starttime
     print(f"IsoThread internal elapsed time: {elapsed_time:.3f}s")
@@ -68,11 +71,32 @@ if example == ISO_INTERNAL:
     )
     iso_internal = iso_internal_thread.cq_object.fuse(iso_internal_core.val())
     print(f"{iso_internal.isValid()=}")
-
     if "show_object" in locals():
         show_object(iso_internal_thread.cq_object, name="iso_internal_thread")
         show_object(iso_internal_core, name="iso_internal_core")
         show_object(iso_internal, name="iso_internal")
+    print(f"a")
+
+    # # export the box as a STEP file
+    # with open("box.stl", "w") as fp:
+    #     cq.exporters.exportShape(iso_internal, ExportTypes.STL, fp)
+    iso_internal.exportStl("1234.stl")
+    iso_internal_core.val().exportStl("12345.stl")
+
+    
+
+    # # Create a sample assembly
+    # assy = cq.Assembly()
+    
+    # assy.add( iso_internal_thread.cq_object, name="a")
+    # assy.add( iso_internal_core, name="b")
+    # assy.add( iso_internal, name="c")
+    # # iso_internal_thread.cq_object.export(".stl")
+    # assy.val().exportStl("mesh.stl")
+    
+    
+    print(f"b")
+
 
 elif example == ISO_EXTERNAL:
 
