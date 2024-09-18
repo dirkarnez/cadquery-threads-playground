@@ -27,6 +27,7 @@ Installation based on [Installing_CQ-editor.md](https://gist.github.com/medicati
 - [NL10 / Code / [r4945] /cq-code/common/metric_threads.py](https://sourceforge.net/p/nl10/code/HEAD/tree/cq-code/common/metric_threads.py)
 
 ### Awesomeness
+- [extensions - CadQuery core enhancements — cq_warehouse 0.8.0 documentation](https://cq-warehouse.readthedocs.io/en/latest/extensions.html)
 - [CadQuery/awesome-cadquery: A curated list of CadQuery code and resources.](https://github.com/CadQuery/awesome-cadquery)
 - [sethfischer/cq-electronics: Pure CadQuery models of various electronic boards and components.](https://github.com/sethfischer/cq-electronics)
 - [gumyr/cq_warehouse: A cadquery parametric part collection](https://github.com/gumyr/cq_warehouse)
