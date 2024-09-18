@@ -73,18 +73,18 @@ if example == ISO_INTERNAL:
     iso_internal = iso_internal_thread.cq_object.fuse(iso_internal_core.val())
     
 
-    collection = cq.Assembly(None, name="collection")
-    collection.add(iso_internal_core)
-    collection.add(iso_internal)
+    assembly = cq.Assembly(None, name="collection")
+    assembly.add(iso_internal_core)
+    assembly.add(iso_internal)
 
     print(f"{iso_internal.isValid()=}")
     if "show_object" in locals():
         # show_object(iso_internal_thread, name="iso_internal_thread")
         # show_object(iso_internal_core, name="iso_internal_core")
         # show_object(iso_internal, name="iso_internal")
-        show_object(collection.toCompound(), name="collection")
-    print(f"exporting...")
-    exporters.export(collection.toCompound(), 'fff.stl')    
+        show_object(assembly.toCompound(), name="collection")
+    print(f"exporting assembly...")
+    exporters.export(assembly.toCompound(), 'fff.stl')    
     print(f"exported!")
 
 elif example == ISO_EXTERNAL:
