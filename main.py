@@ -69,34 +69,23 @@ if example == ISO_INTERNAL:
         .circle(iso_internal_thread.major_diameter / 2)
         .extrude(iso_internal_thread.length)
     )
+
     iso_internal = iso_internal_thread.cq_object.fuse(iso_internal_core.val())
+    
+
+    collection = cq.Assembly(None, name="collection")
+    collection.add(iso_internal_core)
+    collection.add(iso_internal)
+
     print(f"{iso_internal.isValid()=}")
     if "show_object" in locals():
-        show_object(iso_internal_thread.cq_object, name="iso_internal_thread")
-        show_object(iso_internal_core, name="iso_internal_core")
-        show_object(iso_internal, name="iso_internal")
-    print(f"a")
-
-    # # export the box as a STEP file
-    # with open("box.stl", "w") as fp:
-    #     cq.exporters.exportShape(iso_internal, ExportTypes.STL, fp)
-    iso_internal.exportStl("1234.stl")
-    iso_internal_core.val().exportStl("12345.stl")
-
-    
-
-    # # Create a sample assembly
-    # assy = cq.Assembly()
-    
-    # assy.add( iso_internal_thread.cq_object, name="a")
-    # assy.add( iso_internal_core, name="b")
-    # assy.add( iso_internal, name="c")
-    # # iso_internal_thread.cq_object.export(".stl")
-    # assy.val().exportStl("mesh.stl")
-    
-    
-    print(f"b")
-
+        # show_object(iso_internal_thread, name="iso_internal_thread")
+        # show_object(iso_internal_core, name="iso_internal_core")
+        # show_object(iso_internal, name="iso_internal")
+        show_object(collection.toCompound(), name="collection")
+    print(f"exporting...")
+    exporters.export(collection.toCompound(), 'fff.stl')    
+    print(f"exported!")
 
 elif example == ISO_EXTERNAL:
 

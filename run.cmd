@@ -10,7 +10,7 @@ echo %PATH% &&^
 cd CQ-editor &&^
 python.exe -m pip install --upgrade pip &&^
 python -m pip install . &&^
-python -m pip uninstall numpy &&^
+python -m pip uninstall -y numpy &&^
 python -m pip install numpy==1.23.1 &&^
 python run.py &&^
 pause
