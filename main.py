@@ -54,7 +54,7 @@ if example == ISO_INTERNAL:
     """IsoThread Internal Example"""
     starttime = timeit.default_timer()
     iso_internal_thread = IsoThread(
-        major_diameter=23.5 * MM,
+        major_diameter=27 * MM,
         pitch=1.8 * MM,
         length=5 * MM,
         external=False,
@@ -84,7 +84,7 @@ if example == ISO_INTERNAL:
         # show_object(iso_internal, name="iso_internal")
         show_object(assembly.toCompound(), name="collection")
     print(f"exporting assembly...")
-    exporters.export(assembly.toCompound(), 'fff.stl')    
+    exporters.export(assembly.toCompound(), '27mm.stl')    
     print(f"exported!")
 
 elif example == ISO_EXTERNAL:
